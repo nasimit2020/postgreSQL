@@ -11,7 +11,8 @@ CREATE TABLE students (
     country VARCHAR(50)
 )
 
-INSERT INTO students (first_name, last_name, age, grade, course, email, dob, blood_group, country) VALUES
+INSERT INTO students (first_name, last_name, age, grade, course, email, dob, blood_group, country) 
+VALUES
 ('John', 'Doe', 18, 'A', 'Mathematics', 'john.doe@example.com', '2003-05-15', 'O+', 'USA'),
 ('Jane', 'Smith', 17, 'B', 'Science', 'jane.smith@example.com', '2004-02-20', 'A-', 'Canada'),
 ('Michael', 'Johnson', 19, 'C', 'History', 'michael.johnson@example.com', '2002-09-10', 'B+', 'UK'),
@@ -116,3 +117,18 @@ SELECT * FROM students
 -- Catch INSENSITIVE (ILIKE)
 SELECT * FROM students
     WHERE first_name ILIKE 'A%';
+
+-- LIMIT OFFSET for pagination
+
+SELECT * FROM students LIMIT 5 OFFSET 5 * 3;
+
+DELETE FROM students
+    WHERE grade = 'C';
+
+;
+
+SELECT * FROM students;
+
+UPDATE students
+    set email = 'default@mail.com', age = 30, country = 'UK'
+    WHERE student_id = 21;
