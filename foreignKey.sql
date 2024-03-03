@@ -58,7 +58,12 @@ SELECT * FROM post as p
     JOIN "user" as u on p.user_id = u.id;
 
 -- Left JOIN
-SELECT * from post 
-    LEFT JOIN "user" on post.user_id = "user".id;
+SELECT * FROM post as p
+    LEFT OUTER JOIN "user" as u on p.user_id = u.id;
 
 
+SELECT * FROM post as p
+    RIGHT OUTER JOIN "user" as u on p.user_id = u.id;
+
+SELECT * FROM post as p
+    FULL OUTER JOIN "user" as u on p.user_id = u.id;
